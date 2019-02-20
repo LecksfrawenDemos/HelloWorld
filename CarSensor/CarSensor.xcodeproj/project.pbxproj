@@ -14,6 +14,7 @@
 		D5C6E7FB221C6917000A92B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C6E7F9221C6917000A92B7 /* LaunchScreen.storyboard */; };
 		D5C6E806221C6918000A92B7 /* CarSensorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6E805221C6918000A92B7 /* CarSensorTests.swift */; };
 		D5C6E811221C6918000A92B7 /* CarSensorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6E810221C6918000A92B7 /* CarSensorUITests.swift */; };
+		D5D11287221DB7A500548C0F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D11286221DB7A500548C0F /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		D5C6E80C221C6918000A92B7 /* CarSensorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSensorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C6E810221C6918000A92B7 /* CarSensorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSensorUITests.swift; sourceTree = "<group>"; };
 		D5C6E812221C6918000A92B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5D11284221DB79400548C0F /* CarSensor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSensor.entitlements; sourceTree = "<group>"; };
+		D5D11286221DB7A500548C0F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D11287221DB7A500548C0F /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				D5C6E804221C6918000A92B7 /* CarSensorTests */,
 				D5C6E80F221C6918000A92B7 /* CarSensorUITests */,
 				D5C6E7EE221C6915000A92B7 /* Products */,
+				D5D11285221DB7A500548C0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 		D5C6E7EF221C6915000A92B7 /* CarSensor */ = {
 			isa = PBXGroup;
 			children = (
+				D5D11284221DB79400548C0F /* CarSensor.entitlements */,
 				D5C6E7F0221C6915000A92B7 /* AppDelegate.swift */,
 				D5C6E7F2221C6915000A92B7 /* ViewController.swift */,
 				D5C6E7F4221C6915000A92B7 /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				D5C6E812221C6918000A92B7 /* Info.plist */,
 			);
 			path = CarSensorUITests;
+			sourceTree = "<group>";
+		};
+		D5D11285221DB7A500548C0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5D11286221DB7A500548C0F /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,17 @@
 				TargetAttributes = {
 					D5C6E7EC221C6915000A92B7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					D5C6E800221C6918000A92B7 = {
 						CreatedOnToolsVersion = 10.1;
@@ -432,10 +457,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarSensor/CarSensor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZP43QR59Q;
 				INFOPLIST_FILE = CarSensor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,10 +479,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarSensor/CarSensor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZP43QR59Q;
 				INFOPLIST_FILE = CarSensor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
